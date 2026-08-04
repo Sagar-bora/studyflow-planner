@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +10,949 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+/* ================================
+   RESET
+   Browsers add default margin and
+   padding to everything. We remove
+   it so we start from zero.
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================================
+   BODY
+   Dark background for the whole page
+================================ */
+body {
+  background-color: #0d1117;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+/* ================================
+   NAVBAR
+   
+   display: flex      → turns navbar into a flex container
+                        children now sit in a row by default
+   
+   justify-content    → controls space on the horizontal axis
+   space-between      → logo goes far left, button goes far right
+                        links sit in the middle automatically
+   
+   align-items        → controls space on the vertical axis
+   center             → everything is vertically centered
+   
+   padding            → breathing room inside the navbar
+                        top-bottom: 16px, left-right: 32px
+   
+   position: fixed    → navbar sticks to top even when you scroll
+   top: 0             → sticks to the very top of screen
+   width: 100%        → stretches full width of the screen
+   
+   background-color   → dark navy color
+   border-bottom      → thin line under the navbar
+================================ */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #161b22;
+  border-bottom: 1px solid #30363d;
+}
+
+/* ================================
+   LOGO
+================================ */
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #4f8ef7;
+
+  /* 
+    cursor: pointer → shows hand cursor on hover
+    just like a link
+  */
+  cursor: pointer;
+}
+
+/* ================================
+   NAV LINKS
+   
+   ul by default shows bullet points
+   and stacks items vertically.
+   We fix both below.
+================================ */
+.nav-links {
+  list-style: none;  /* removes bullet points */
+  display: flex;     /* makes li items sit in a row */
+  gap: 32px;         /* space between each link */
+}
+
+.nav-links a {
+  color: #8b949e;
+  text-decoration: none;  /* removes underline */
+  font-size: 15px;
+}
+
+/* 
+  :hover → applies only when mouse is on top of element
+*/
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+/* ================================
+   LOGIN BUTTON
+================================ */
+.nav-btn {
+  background-color: #4f8ef7;
+  color: #ffffff;
+  border: none;          /* removes default button border */
+  padding: 10px 24px;
+  border-radius: 8px;    /* rounded corners */
+  font-size: 15px;
+  cursor: pointer;       /* hand cursor on hover */
+}
+
+.nav-btn:hover {
+  background-color: #3a7de8;  /* slightly darker on hover */
+}
+/* ================================
+   HERO SECTION
+
+   margin-top: 80px
+   Our navbar is fixed and 80px tall.
+   Without this the hero hides BEHIND
+   the navbar. We push it down by the
+   exact height of the navbar.
+
+   min-height: 90vh
+   vh = viewport height (screen height)
+   90vh = 90% of the screen height
+   This makes the hero take up most
+   of the visible screen on load.
+
+   display: flex
+   flex-direction: column
+   We use flex here to center everything
+   vertically and horizontally inside
+   the section.
+
+   justify-content: center  → vertical center
+   align-items: center      → horizontal center
+
+   text-align: center
+   Centers the text inside headings and p tags
+================================ */
+#hero {
+  margin-top: 80px;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 24px;
+}
+
+/* ================================
+   HERO LABEL
+   The small text above the heading
+   Like a badge or tag
+================================ */
+.hero-label {
+  font-size: 13px;
+  color: #4f8ef7;
+  background-color: #1c2a3a;
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+  letter-spacing: 0.05em;
+}
+
+/* ================================
+   MAIN HEADING
+
+   font-size: 52px
+   Big and bold — first thing eyes go to
+
+   line-height: 1.2
+   Controls gap between the two lines
+   of the heading. 1.2 = 20% more than
+   the font size. Without this lines
+   feel too cramped.
+
+   margin-bottom: 20px
+   Space between heading and the text below
+================================ */
+#hero h1 {
+  font-size: 52px;
+  font-weight: bold;
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+/* ================================
+   HERO SUBTITLE
+   The one line description below heading
+================================ */
+.hero-sub {
+  font-size: 17px;
+  color: #8b949e;
+  max-width: 480px;
+
+  /*
+    max-width: 480px
+    Without this the text stretches across
+    the full screen width and is hard to read.
+    480px keeps it in a readable column width.
+    This is called "measure" in typography.
+  */
+
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+/* ================================
+   BUTTONS ROW
+
+   We wrap both buttons in a div and
+   use flex to place them side by side.
+   gap: 16px gives space between them.
+================================ */
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+/* ================================
+   PRIMARY BUTTON
+   Solid blue — main action
+================================ */
+.btn-primary {
+  background-color: #4f8ef7;
+  color: #ffffff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #3a7de8;
+}
+
+/* ================================
+   SECONDARY BUTTON
+   No fill — just a border
+   Called "ghost button" or "outline button"
+
+   Why two button styles?
+   Primary = what we WANT the user to click
+   Secondary = an alternative, less important action
+   The visual difference guides the user's eye.
+================================ */
+.btn-secondary {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #30363d;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  border-color: #8b949e;
+}
+/* ================================
+   ACTIVE NAV LINK
+   
+   Shows which page user is on.
+   White color + bottom border
+   makes it look selected.
+================================ */
+.nav-links a.active {
+  color: #ffffff;
+  border-bottom: 2px solid #4f8ef7;
+  padding-bottom: 2px;
+}
+/* ================================
+   FEATURES SECTION
+   
+   padding: 80px 24px
+   Top and bottom space so section
+   does not feel cramped.
+   Left right 24px so content does
+   not touch screen edges.
+   
+   text-align: center
+   Centers the heading and subtext
+================================ */
+#features {
+  padding: 80px 24px;
+  text-align: center;
+}
+
+/* ================================
+   SECTION HEADING
+================================ */
+#features h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.features-sub {
+  font-size: 16px;
+  color: #8b949e;
+  margin-bottom: 48px;
+}
+
+/* ================================
+   GRID CONTAINER
+   
+   display: grid
+   Turns this div into a grid container.
+   Children become grid items.
+   
+   grid-template-columns: repeat(3, 1fr)
+   repeat(3, 1fr) means — make 3 columns,
+   each taking equal space (1fr each).
+   fr = fraction of available space.
+   So 3 equal columns automatically.
+   
+   gap: 24px
+   Space between every card.
+   Works for both rows and columns.
+   Cleaner than using margin on cards.
+================================ */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+
+  /*
+    max-width + margin: 0 auto
+    This is the standard way to center
+    a block element horizontally.
+    max-width stops it from stretching
+    too wide on big screens.
+    margin auto pushes equal space
+    on left and right = centered.
+  */
+  margin: 0 auto;
+}
+
+/* ================================
+   FEATURE CARD
+   
+   background-color: #161b22
+   Slightly lighter than page background
+   so card is visible but not harsh.
+   
+   border: 1px solid #30363d
+   Subtle border so card has a boundary.
+   
+   border-radius: 12px
+   Rounded corners — feels modern and soft.
+   
+   padding: 32px 24px
+   Inner breathing room so content
+   does not touch card edges.
+   
+   text-align: left
+   Section is centered but card content
+   reads better left aligned.
+================================ */
+.feature-card {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 32px 24px;
+  text-align: left;
+}
+
+/* ================================
+   HOVER EFFECT ON CARD
+   
+   transform: translateY(-4px)
+   Moves card 4px upward on hover.
+   Gives a "lift" feeling.
+   
+   transition: transform 0.2s
+   Without this the lift happens
+   instantly and looks jarring.
+   0.2s makes it smooth.
+   
+   border-color change
+   Border becomes blue on hover —
+   subtle highlight effect.
+================================ */
+.feature-card:hover {
+  transform: translateY(-4px);
+  transition: transform 0.2s;
+  border-color: #4f8ef7;
+}
+
+/* ================================
+   CARD ICON
+================================ */
+.card-icon {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+/* ================================
+   CARD TITLE
+================================ */
+.feature-card h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+/* ================================
+   CARD DESCRIPTION
+================================ */
+.feature-card p {
+  font-size: 14px;
+  color: #8b949e;
+  line-height: 1.7;
+}
+/* ================================
+   LOGIN PAGE
+   
+   min-height: 100vh
+   Takes full screen height.
+   
+   display: flex
+   justify-content: center
+   align-items: center
+   
+   This is the standard way to center
+   one box in the middle of the screen.
+   Both horizontally and vertically.
+   This is the most common interview
+   question — "how do you center a div?"
+   Answer: flex + justify-content center
+   + align-items center on the parent.
+================================ */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+/* ================================
+   LOGIN BOX
+   
+   width: 100%
+   max-width: 400px
+   Box takes full width on mobile
+   but never gets wider than 400px
+   on big screens. Responsive without
+   any media query.
+================================ */
+.login-box {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 16px;
+  padding: 40px 36px;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* ================================
+   LOGO
+================================ */
+.login-logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #4f8ef7;
+  margin-bottom: 24px;
+}
+
+/* ================================
+   HEADING AND SUBTEXT
+================================ */
+.login-box h2 {
+  font-size: 26px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.login-sub {
+  font-size: 14px;
+  color: #8b949e;
+  margin-bottom: 28px;
+}
+
+/* ================================
+   FORM GROUP
+   Each label + input pair
+   margin-bottom gives space
+   between the two fields
+================================ */
+.form-group {
+  margin-bottom: 18px;
+}
+
+/* ================================
+   LABEL
+   display: block makes it sit
+   above the input on its own line.
+   By default label is inline so it
+   would sit beside the input.
+================================ */
+.form-group label {
+  display: block;
+  font-size: 13px;
+  color: #8b949e;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   INPUT
+   
+   width: 100%
+   Input stretches full width of box.
+   
+   outline: none
+   Removes the default blue browser
+   outline on focus. We add our own
+   below with border-color.
+================================ */
+.form-group input {
+  width: 100%;
+  background-color: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+}
+
+/* ================================
+   INPUT FOCUS
+   When user clicks inside input
+   border turns blue — visual feedback
+   that this field is active
+================================ */
+.form-group input:focus {
+  border-color: #4f8ef7;
+}
+
+/* ================================
+   LOGIN BUTTON
+   width: 100% stretches button
+   full width of the box — standard
+   for login forms
+================================ */
+.btn-login {
+  width: 100%;
+  background-color: #4f8ef7;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.btn-login:hover {
+  background-color: #3a7de8;
+}
+
+/* ================================
+   FOOTER LINK
+   The "don't have an account" line
+================================ */
+.login-footer {
+  text-align: center;
+  font-size: 13px;
+  color: #8b949e;
+  margin-top: 24px;
+}
+
+.login-footer a {
+  color: #4f8ef7;
+  text-decoration: none;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
+/* ================================
+   NAV USER (right side of navbar)
+   Shows name and logout button
+================================ */
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+  color: #8b949e;
+}
+
+.btn-logout {
+  color: #8b949e;
+  text-decoration: none;
+  font-size: 14px;
+  border: 1px solid #30363d;
+  padding: 6px 14px;
+  border-radius: 6px;
+}
+
+.btn-logout:hover {
+  color: #ffffff;
+  border-color: #8b949e;
+}
+
+/* ================================
+   DASHBOARD MAIN AREA
+
+   margin-top: 80px
+   Same as always — clear fixed navbar.
+
+   max-width + margin auto
+   Centers content, stops it stretching
+   too wide on large screens.
+
+   padding: 40px 24px
+   Breathing room around content.
+================================ */
+.dashboard {
+  margin-top: 80px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 40px 24px;
+}
+
+/* ================================
+   WELCOME ROW
+
+   display: flex
+   justify-content: space-between
+   Pushes welcome text to the left
+   and Add Task button to the right.
+   Same pattern as navbar.
+================================ */
+.welcome-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 36px;
+}
+
+.welcome-heading {
+  font-size: 26px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.welcome-date {
+  font-size: 14px;
+  color: #8b949e;
+}
+
+.btn-add {
+  background-color: #4f8ef7;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-add:hover {
+  background-color: #3a7de8;
+}
+
+/* ================================
+   STATS GRID
+   3 equal boxes in a row.
+   Same grid pattern as features section.
+================================ */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: #8b949e;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stat-number {
+  font-size: 36px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.stat-sub {
+  font-size: 12px;
+  color: #8b949e;
+}
+
+/* ================================
+   TASKS SECTION
+================================ */
+.tasks-heading {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+/* ================================
+   TASK ITEM
+
+   display: flex
+   align-items: center
+   gap: 12px
+   Checkbox, text, tag, delete button
+   all sit in one row with equal spacing.
+================================ */
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 10px;
+}
+
+/* 
+  When task has "done" class added:
+  The label gets strikethrough and
+  faded color to show it is completed.
+*/
+.task-item.done label {
+  text-decoration: line-through;
+  color: #8b949e;
+}
+
+.task-item label {
+  flex: 1;
+  /*
+    flex: 1 makes the label take up
+    all remaining space in the row.
+    So delete button always stays
+    on the far right regardless of
+    how long the task text is.
+  */
+  font-size: 15px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* ================================
+   SUBJECT TAGS
+   
+   Two classes on each tag:
+   .tag        → common styles (size, padding, radius)
+   .tag-cs     → specific color for CS
+   .tag-math   → specific color for Math
+   .tag-phy    → specific color for Physics
+   
+   This way we write common styles once
+   and only write the color difference.
+================================ */
+.tag {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.tag-cs {
+  background-color: #1c2a3a;
+  color: #4f8ef7;
+}
+
+.tag-math {
+  background-color: #1a2a1a;
+  color: #34d399;
+}
+
+.tag-phy {
+  background-color: #2a1a2a;
+  color: #a78bfa;
+}
+
+/* ================================
+   DELETE BUTTON
+================================ */
+.btn-delete {
+  background: none;
+  border: none;
+  color: #8b949e;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.btn-delete:hover {
+  color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.1);
+}
+/* ================================
+   FOOTER
+
+   margin-top: auto pushes footer
+   to the bottom of the page.
+
+   border-top separates footer
+   from the content above it.
+================================ */
+footer {
+  border-top: 1px solid #30363d;
+  padding: 48px 32px 24px;
+  margin-top: 80px;
+}
+
+/* ================================
+   FOOTER TOP ROW
+
+   display: flex
+   justify-content: space-between
+   Brand on left, links on right.
+   Same pattern as navbar.
+================================ */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  /*
+    align-items: flex-start
+    Aligns items to the TOP.
+    We do not want center here because
+    the links column is taller than
+    the brand text. flex-start keeps
+    everything aligned at the top.
+  */
+  margin-bottom: 48px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ================================
+   FOOTER BRAND (left side)
+================================ */
+.footer-logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #4f8ef7;
+  margin-bottom: 10px;
+}
+
+.footer-tagline {
+  font-size: 13px;
+  color: #8b949e;
+  max-width: 200px;
+  line-height: 1.6;
+}
+
+/* ================================
+   FOOTER LINKS (right side)
+
+   display: flex + gap
+   Two columns of links sit
+   side by side.
+================================ */
+.footer-links {
+  display: flex;
+  gap: 48px;
+}
+
+/* ================================
+   EACH LINK COLUMN
+
+   display: flex
+   flex-direction: column
+   Links stack vertically inside
+   each column.
+================================ */
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-col-title {
+  font-size: 13px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.footer-col a {
+  font-size: 13px;
+  color: #8b949e;
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  color: #ffffff;
+}
+
+/* ================================
+   FOOTER BOTTOM
+   Copyright line
+   
+   border-top separates it from
+   the links above.
+   text-align center puts copyright
+   in the middle.
+================================ */
+.footer-bottom {
+  border-top: 1px solid #30363d;
+  padding-top: 24px;
+  text-align: center;
+  font-size: 12px;
+  color: #8b949e;
+  max-width: 900px;
+  margin: 0 auto;
 }
