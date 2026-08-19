@@ -8,14 +8,11 @@ function Hero({ title, subtitle }) {
       <p className="hero-sub">{subtitle}</p>
 
       <div className="hero-buttons">
-        <a href="/register">
-          <button className="btn-primary">Get started free</button>
-        </a>
+        <button className="btn-primary">Get started free</button>
         <a href="#features">
           <button className="btn-secondary">See how it works</button>
         </a>
       </div>
-
     </section>
   )
 }
