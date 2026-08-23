@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Features from './components/Features'
-import Dashboard from './components/Dashboard'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         subtitle="Organise your subjects, track progress, and share notes with your classmates. All in one place."
       />
       <Features />
-      <Dashboard />
+      <Footer />
     </div>
   )
 }
