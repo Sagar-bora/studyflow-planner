@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Navbar() {
   return (
@@ -6,12 +7,16 @@ function Navbar() {
       <div className="logo">StudyFlow</div>
 
       <ul className="nav-links">
-        <li><a href="#hero">Home</a></li>
+        <li><Link to="/">Home</Link></li>
+        {/* Use normal a tag for scroll links — not Link */}
         <li><a href="#features">Features</a></li>
         <li><a href="#">About</a></li>
       </ul>
 
-      <button className="nav-btn">Login</button>
+      <Link to="/login">
+        <button className="nav-btn">Login</button>
+      </Link>
+
     </nav>
   )
 }
