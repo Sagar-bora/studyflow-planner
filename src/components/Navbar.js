@@ -8,7 +8,6 @@ function Navbar() {
 
       <ul className="nav-links">
         <li><Link to="/">Home</Link></li>
-        {/* Use normal a tag for scroll links — not Link */}
         <li><a href="#features">Features</a></li>
         <li><a href="#">About</a></li>
       </ul>
