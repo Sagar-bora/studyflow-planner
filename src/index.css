@@ -1129,3 +1129,95 @@ footer {
 .sidebar-input:focus {
   border-color: #4f8ef7;
 }
+
+
+
+
+
+/* ================================
+   RESOURCE CARD
+================================ */
+.resource-card {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  transition: border-color 0.2s;
+}
+
+.resource-card:hover {
+  border-color: #4f8ef7;
+}
+
+.resource-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.resource-title {
+  font-size: 15px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.resource-url {
+  font-size: 12px;
+  color: #8b949e;
+}
+
+.resource-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-visit {
+  background-color: #1c2a3a;
+  color: #4f8ef7;
+  border: 1px solid #4f8ef7;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-visit:hover {
+  background-color: #4f8ef7;
+  color: #ffffff;
+}
+
+/* Filter tabs */
+.filter-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.filter-tab {
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 13px;
+  cursor: pointer;
+  border: 1px solid #30363d;
+  background: none;
+  color: #8b949e;
+  transition: all 0.2s;
+}
+
+.filter-tab:hover {
+  border-color: #8b949e;
+  color: #ffffff;
+}
+
+.filter-tab.active {
+  background-color: #4f8ef7;
+  border-color: #4f8ef7;
+  color: #ffffff;
+}

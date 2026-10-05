@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Hero({ title, subtitle }) {
   return (
@@ -8,7 +9,9 @@ function Hero({ title, subtitle }) {
       <p className="hero-sub">{subtitle}</p>
 
       <div className="hero-buttons">
-        <button className="btn-primary">Get started free</button>
+        <Link to="/register">
+          <button className="btn-primary">Get started free</button>
+        </Link>
         <a href="#features">
           <button className="btn-secondary">See how it works</button>
         </a>
