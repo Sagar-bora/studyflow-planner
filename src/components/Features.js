@@ -1,3 +1,6 @@
+import React from 'react'
+import FeatureCard from './FeatureCard'
+
 const featuresData = [
   {
     icon: '🤖',
@@ -15,3 +18,26 @@ const featuresData = [
     description: 'Track your study sessions, streaks, and subject wise time distribution with visual charts.'
   }
 ]
+
+function Features() {
+  return (
+    <section id="features">
+      <h2>Everything you need to study better</h2>
+      <p className="features-sub">
+        Three powerful tools built for serious students
+      </p>
+      <div className="features-grid">
+        {featuresData.map((item, index) => (
+          <FeatureCard
+            key={index}
+            icon={item.icon}
+            title={item.title}
+            description={item.description}
+          />
+        ))}
+      </div>
+    </section>
+  )
+}
+
+export default Features
